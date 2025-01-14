@@ -8,6 +8,7 @@ from gui.image_widget import *
 from gui.analysis_widget import *
 from gui.file_selector import *
 from gui.chart_widget import *
+from pathlib import Path
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -32,19 +33,22 @@ class MainWindow(QMainWindow):
 
     def _analyse_image(self):
         selected_file = self.file_selector_widget.selected_file
-        analyser = ImageAnalyser(str(selected_file))
+        if(selected_file.is_file()):
+            analyser = ImageAnalyser(str(selected_file))
 
-        print(f"UniqueColors: {analyser.uniqueColors()}")
-        print(f"Most Common: {analyser.findMostCommonColor()}")
+            print(f"UniqueColors: {analyser.uniqueColors()}")
+            print(f"Most Common: {analyser.findMostCommonColor()}")
 
-        avg_color = analyser.calcAverage()
-        median_color = analyser.calcMedian()
-        
-        print(f"Average: {avg_color[0]}, {avg_color[1]}, {avg_color[2]}")
-        print(f"Median: {median_color[0]}, {median_color[1]}, {median_color[2]}")
+            avg_color = analyser.calcAverage()
+            median_color = analyser.calcMedian()
+            
+            print(f"Average: {avg_color[0]}, {avg_color[1]}, {avg_color[2]}")
+            print(f"Median: {median_color[0]}, {median_color[1]}, {median_color[2]}")
 
-        self.analysis_widget.set_average_color(avg_color)
-        self.analysis_widget.set_median_color(median_color)
+            self.analysis_widget.set_average_color(avg_color)
+            self.analysis_widget.set_median_color(median_color)
 
-        most_common_colors = analyser.findMostCommonColor(5)
-        self.chart_widget.set_most_common_colors(most_common_colors)
+            most_common_colors = analyser.findMostCommonColor(5)
+            self.chart_widget.set_most_common_colors(most_common_colors)
+        else:
+            print("Es wurde noch kein Bild ausgewählt.")
