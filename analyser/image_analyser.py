@@ -65,3 +65,10 @@ class ImageAnalyser:
                 return val
             
         return sortedValues[-1][0]
+    
+    # 255 0 0
+    # 0 255 0
+    # 
+    # r -> 0, 255 -> 255
+    # g -> 0, 255 -> 255 
+    # b -> 0, 0   -> 0
