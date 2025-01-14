@@ -19,7 +19,7 @@ class FileSelectorWidget(QWidget):
         super().__init__(parent)
         
         #Default Image
-        self.selected_file = Path("C:\\Users\\lukas\\OneDrive\\#Studium\\#FHV\\1. Semester\\Wissenschaftliches Rechnen mit Python\\Projekt\\img\\bild_4.png")
+        self.selected_file = Path("C:\\")
         
         self.button_select_file = QPushButton("Select Img")
         self.image_label = ImageWidget(str(self.selected_file))
@@ -36,7 +36,7 @@ class FileSelectorWidget(QWidget):
         dialog.setFileMode(QFileDialog.FileMode.ExistingFile)
         dialog.setNameFilter("Images (*.png *.jpg)")
         #Default File Location
-        dialog.setDirectory("C:\\Users\\lukas\\OneDrive\\#Studium\\#FHV\\1. Semester\\Wissenschaftliches Rechnen mit Python\\Projekt\\img\\")
+        dialog.setDirectory("C:\\")
 
         if dialog.exec():
             file_paths = dialog.selectedFiles()
