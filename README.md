@@ -1,4 +1,4 @@
-# python_image_analysis
+# python_image_analyser
 
 
 This project is a Python-based image analysis tool that allows you to load images (PNG or JPG) and derive various color statistics. The application computes metrics such as the average color, median color, unique colors, and the most common colors. It also provides a user-friendly GUI built with **PyQt6** to visualize these results. For image processing, this project uses **PIL**.
