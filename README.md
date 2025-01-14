@@ -28,7 +28,7 @@ This project is a Python-based image analysis tool that allows you to load image
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/lukas3482/python_image_analysis.git
+    git clone https://github.com/lukas3482/python_image_analyser.git
     ```
 2. **Install dependencies**:
     ```bash
